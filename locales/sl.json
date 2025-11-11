@@ -1,0 +1,80 @@
+{
+  "common": {
+    "brandName": "healthy corner",
+    "tagline": "ALPSKI ZDRAVILIŠKI KAMP",
+    "loading": "Nalaganje...",
+    "error": "Prišlo je do napake",
+    "success": "Uspešno!"
+  },
+  "nav": {
+    "home": "Domov",
+    "services": "Storitve",
+    "menu": "Meni",
+    "schedule": "Urnik",
+    "gallery": "Galerija",
+    "contact": "Kontakt",
+    "shop": "Trgovina"
+  },
+  "hero": {
+    "title": "healthy corner",
+    "subtitle": "ALPSKI ZDRAVILIŠKI KAMP",
+    "cta": "Raziščite storitve"
+  },
+  "about": {
+    "label": "O NAS",
+    "title": "Dobrodošli v Kampu Menina",
+    "description": "Doživite dobro počutje v srcu narave. Naš retreat ponuja jogo, ledene kopeli in zdravo prehrano v mirnem alpskem okolju."
+  },
+  "services": {
+    "label": "STORITVE",
+    "title": "Wellness paketi",
+    "categories": {
+      "all": "Vse",
+      "yoga": "Joga",
+      "iceBathing": "Ledene kopeli",
+      "workshops": "Delavnice",
+      "packages": "Paketi"
+    },
+    "bookNow": "Rezerviraj zdaj",
+    "duration": "Trajanje",
+    "capacity": "Kapaciteta",
+    "price": "Cena"
+  },
+  "menu": {
+    "label": "MENI",
+    "title": "Zdrava hrana",
+    "categories": {
+      "snacks": "Prigrizki",
+      "meals": "Obroki",
+      "beverages": "Pijače",
+      "supplements": "Dodatki"
+    },
+    "addToCart": "Dodaj v košarico",
+    "ingredients": "Sestavine",
+    "allergens": "Alergeni"
+  },
+  "schedule": {
+    "label": "URNIK",
+    "title": "Tedenski program",
+    "availableSpots": "Prosta mesta",
+    "instructor": "Inštruktor",
+    "bookSlot": "Rezerviraj termin"
+  },
+  "contact": {
+    "label": "KONTAKT",
+    "title": "Stopite v stik",
+    "name": "Ime",
+    "email": "E-pošta",
+    "phone": "Telefon",
+    "message": "Sporočilo",
+    "send": "Pošlji sporočilo",
+    "newsletter": "Naročite se na novice"
+  },
+  "cart": {
+    "title": "Nakupovalna košarica",
+    "empty": "Vaša košarica je prazna",
+    "subtotal": "Vmesna vsota",
+    "checkout": "Zaključi nakup",
+    "remove": "Odstrani"
+  }
+}

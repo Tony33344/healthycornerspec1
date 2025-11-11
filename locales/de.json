@@ -1,0 +1,80 @@
+{
+  "common": {
+    "brandName": "healthy corner",
+    "tagline": "ALPSKI ZDRAVILIŠKI KAMP",
+    "loading": "Laden...",
+    "error": "Ein Fehler ist aufgetreten",
+    "success": "Erfolg!"
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "menu": "Menü",
+    "schedule": "Zeitplan",
+    "gallery": "Galerie",
+    "contact": "Kontakt",
+    "shop": "Shop"
+  },
+  "hero": {
+    "title": "healthy corner",
+    "subtitle": "ALPSKI ZDRAVILIŠKI KAMP",
+    "cta": "Dienstleistungen erkunden"
+  },
+  "about": {
+    "label": "ÜBER UNS",
+    "title": "Willkommen im Camp Menina",
+    "description": "Erleben Sie Wellness im Herzen der Natur. Unser Retreat bietet Yoga, Eisbaden und gesunde Küche in einer ruhigen alpinen Umgebung."
+  },
+  "services": {
+    "label": "DIENSTLEISTUNGEN",
+    "title": "Wellness-Pakete",
+    "categories": {
+      "all": "Alle",
+      "yoga": "Yoga",
+      "iceBathing": "Eisbaden",
+      "workshops": "Workshops",
+      "packages": "Pakete"
+    },
+    "bookNow": "Jetzt buchen",
+    "duration": "Dauer",
+    "capacity": "Kapazität",
+    "price": "Preis"
+  },
+  "menu": {
+    "label": "MENÜ",
+    "title": "Gesundes Essen",
+    "categories": {
+      "snacks": "Snacks",
+      "meals": "Mahlzeiten",
+      "beverages": "Getränke",
+      "supplements": "Nahrungsergänzungsmittel"
+    },
+    "addToCart": "In den Warenkorb",
+    "ingredients": "Zutaten",
+    "allergens": "Allergene"
+  },
+  "schedule": {
+    "label": "ZEITPLAN",
+    "title": "Wöchentliche Aktivitäten",
+    "availableSpots": "Verfügbare Plätze",
+    "instructor": "Instruktor",
+    "bookSlot": "Diesen Zeitslot buchen"
+  },
+  "contact": {
+    "label": "KONTAKT",
+    "title": "Kontaktieren Sie uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "newsletter": "Newsletter abonnieren"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "subtotal": "Zwischensumme",
+    "checkout": "Zur Kasse",
+    "remove": "Entfernen"
+  }
+}

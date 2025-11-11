@@ -1,0 +1,80 @@
+{
+  "common": {
+    "brandName": "healthy corner",
+    "tagline": "ALPSKI ZDRAVILIŠKI KAMP",
+    "loading": "Laden...",
+    "error": "Er is een fout opgetreden",
+    "success": "Succes!"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "menu": "Menu",
+    "schedule": "Schema",
+    "gallery": "Galerij",
+    "contact": "Contact",
+    "shop": "Winkel"
+  },
+  "hero": {
+    "title": "healthy corner",
+    "subtitle": "ALPSKI ZDRAVILIŠKI KAMP",
+    "cta": "Ontdek diensten"
+  },
+  "about": {
+    "label": "OVER ONS",
+    "title": "Welkom bij Kamp Menina",
+    "description": "Ervaar wellness in het hart van de natuur. Ons retreat biedt yoga, ijsbaden en gezonde keuken in een serene alpine omgeving."
+  },
+  "services": {
+    "label": "DIENSTEN",
+    "title": "Wellness pakketten",
+    "categories": {
+      "all": "Alle",
+      "yoga": "Yoga",
+      "iceBathing": "IJsbaden",
+      "workshops": "Workshops",
+      "packages": "Pakketten"
+    },
+    "bookNow": "Boek nu",
+    "duration": "Duur",
+    "capacity": "Capaciteit",
+    "price": "Prijs"
+  },
+  "menu": {
+    "label": "MENU",
+    "title": "Gezond eten",
+    "categories": {
+      "snacks": "Snacks",
+      "meals": "Maaltijden",
+      "beverages": "Dranken",
+      "supplements": "Supplementen"
+    },
+    "addToCart": "Toevoegen aan winkelwagen",
+    "ingredients": "Ingrediënten",
+    "allergens": "Allergenen"
+  },
+  "schedule": {
+    "label": "SCHEMA",
+    "title": "Wekelijkse activiteiten",
+    "availableSpots": "Beschikbare plaatsen",
+    "instructor": "Instructeur",
+    "bookSlot": "Boek dit tijdslot"
+  },
+  "contact": {
+    "label": "CONTACT",
+    "title": "Neem contact op",
+    "name": "Naam",
+    "email": "E-mail",
+    "phone": "Telefoon",
+    "message": "Bericht",
+    "send": "Verstuur bericht",
+    "newsletter": "Abonneer op nieuwsbrief"
+  },
+  "cart": {
+    "title": "Winkelwagen",
+    "empty": "Uw winkelwagen is leeg",
+    "subtotal": "Subtotaal",
+    "checkout": "Afrekenen",
+    "remove": "Verwijderen"
+  }
+}

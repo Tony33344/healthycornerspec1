@@ -1,0 +1,80 @@
+{
+  "common": {
+    "brandName": "healthy corner",
+    "tagline": "ALPSKI ZDRAVILIŠKI KAMP",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "menu": "Menu",
+    "schedule": "Schedule",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "shop": "Shop"
+  },
+  "hero": {
+    "title": "healthy corner",
+    "subtitle": "ALPSKI ZDRAVILIŠKI KAMP",
+    "cta": "Explore Services"
+  },
+  "about": {
+    "label": "ABOUT US",
+    "title": "Welcome to Camp Menina",
+    "description": "Experience wellness in the heart of nature. Our retreat offers yoga, ice bathing, and healthy cuisine in a serene alpine setting."
+  },
+  "services": {
+    "label": "SERVICES",
+    "title": "Wellness Packages",
+    "categories": {
+      "all": "All",
+      "yoga": "Yoga",
+      "iceBathing": "Ice Bathing",
+      "workshops": "Workshops",
+      "packages": "Packages"
+    },
+    "bookNow": "Book Now",
+    "duration": "Duration",
+    "capacity": "Capacity",
+    "price": "Price"
+  },
+  "menu": {
+    "label": "MENU",
+    "title": "Healthy Food",
+    "categories": {
+      "snacks": "Snacks",
+      "meals": "Meals",
+      "beverages": "Beverages",
+      "supplements": "Supplements"
+    },
+    "addToCart": "Add to Cart",
+    "ingredients": "Ingredients",
+    "allergens": "Allergens"
+  },
+  "schedule": {
+    "label": "SCHEDULE",
+    "title": "Weekly Activities",
+    "availableSpots": "Available Spots",
+    "instructor": "Instructor",
+    "bookSlot": "Book This Slot"
+  },
+  "contact": {
+    "label": "CONTACT",
+    "title": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send Message",
+    "newsletter": "Subscribe to Newsletter"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "remove": "Remove"
+  }
+}
