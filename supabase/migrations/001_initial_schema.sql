@@ -3,15 +3,15 @@
 -- Created: 2025-01-12
 -- Refs: specs/001-wellness-platform/plan/data-model.md
 
--- Enable UUID extension
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- Enable pgcrypto for gen_random_uuid()
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- ============================================================================
 -- TABLE: services
 -- Purpose: Wellness packages and activities offered at the retreat
 -- ============================================================================
 CREATE TABLE services (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name_sl TEXT NOT NULL,
   name_nl TEXT NOT NULL,
   name_en TEXT NOT NULL,
@@ -42,7 +42,7 @@ COMMENT ON COLUMN services.category IS 'Yoga, Ice Bathing, Workshops, or Package
 -- Purpose: Healthy food products available for purchase
 -- ============================================================================
 CREATE TABLE menu_items (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name_sl TEXT NOT NULL,
   name_nl TEXT NOT NULL,
   name_en TEXT NOT NULL,
@@ -77,7 +77,7 @@ COMMENT ON COLUMN menu_items.allergens IS 'Array of allergen names';
 -- Purpose: Weekly recurring time slots for activities
 -- ============================================================================
 CREATE TABLE schedules (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   day_of_week INTEGER NOT NULL CHECK (day_of_week BETWEEN 0 AND 6),
   time TIME NOT NULL,
   service_id UUID REFERENCES services(id) ON DELETE CASCADE,
@@ -98,7 +98,7 @@ COMMENT ON COLUMN schedules.day_of_week IS '0=Sunday, 1=Monday, ..., 6=Saturday'
 -- Purpose: User reservations for scheduled activities
 -- ============================================================================
 CREATE TABLE bookings (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
   schedule_id UUID REFERENCES schedules(id) ON DELETE CASCADE,
   booking_date DATE NOT NULL,
@@ -125,7 +125,7 @@ COMMENT ON TABLE bookings IS 'User reservations for activities';
 -- Purpose: Shop orders for menu items and products
 -- ============================================================================
 CREATE TABLE orders (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES auth.users(id),
   order_number TEXT UNIQUE NOT NULL,
   items JSONB NOT NULL,
@@ -151,7 +151,7 @@ COMMENT ON COLUMN orders.items IS 'Array of {menu_item_id, quantity, price, name
 -- Purpose: Persistent shopping cart for authenticated users
 -- ============================================================================
 CREATE TABLE carts (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES auth.users(id) UNIQUE,
   items JSONB DEFAULT '[]',
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -168,7 +168,7 @@ COMMENT ON COLUMN carts.items IS 'Array of {menu_item_id, quantity}';
 -- Purpose: Guest reviews and ratings
 -- ============================================================================
 CREATE TABLE testimonials (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   guest_name TEXT NOT NULL,
   quote_sl TEXT NOT NULL,
   quote_nl TEXT NOT NULL,
@@ -189,7 +189,7 @@ COMMENT ON TABLE testimonials IS 'Guest reviews and ratings';
 -- Purpose: Photo gallery images
 -- ============================================================================
 CREATE TABLE gallery_images (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   url TEXT NOT NULL,
   caption_sl TEXT,
   caption_nl TEXT,
@@ -213,7 +213,7 @@ COMMENT ON TABLE gallery_images IS 'Photo gallery';
 -- Purpose: CMS-managed content pages
 -- ============================================================================
 CREATE TABLE pages (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   slug TEXT UNIQUE NOT NULL,
   title_sl TEXT NOT NULL,
   title_nl TEXT NOT NULL,
@@ -238,7 +238,7 @@ COMMENT ON TABLE pages IS 'CMS content pages';
 -- Purpose: Email newsletter subscriptions
 -- ============================================================================
 CREATE TABLE newsletter_subscribers (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT UNIQUE NOT NULL,
   subscribed_at TIMESTAMPTZ DEFAULT NOW(),
   unsubscribed_at TIMESTAMPTZ
