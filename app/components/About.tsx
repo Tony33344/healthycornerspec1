@@ -12,13 +12,15 @@ export default function About() {
     <section className="relative py-24 md:py-40 px-4 overflow-hidden bg-neutral-50">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={BRAND_ASSETS.aboutBg}
-          alt="About Camp Menina"
-          fill
-          className="object-cover opacity-5"
-          sizes="100vw"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={BRAND_ASSETS.aboutBg}
+            alt="About Camp Menina"
+            fill
+            className="object-cover opacity-5"
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       {/* Content */}

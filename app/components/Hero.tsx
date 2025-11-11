@@ -12,15 +12,17 @@ export default function Hero() {
     <section className="relative h-screen bg-black flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={BRAND_ASSETS.heroBg}
-          alt="Camp Menina Wellness Retreat"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-          quality={90}
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src={BRAND_ASSETS.heroBg}
+            alt="Camp Menina Wellness Retreat"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+            quality={90}
+          />
+        </div>
         {/* Dark overlay for better text readability */}
         <motion.div
           initial={{ opacity: 0 }}
