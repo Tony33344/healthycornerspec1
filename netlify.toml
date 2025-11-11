@@ -1,0 +1,62 @@
+# Netlify Configuration for Healthy Corner Platform
+# Constitutional Reference: .specify/memory/constitution.md v1.0.0 - Principle 6 (Performance & Scalability)
+
+[build]
+  # Next.js build command
+  command = "npm run build"
+  # Next.js output directory
+  publish = ".next"
+  # Functions directory (for Netlify Functions if needed)
+  functions = "netlify/functions"
+
+[build.environment]
+  # Node.js version
+  NODE_VERSION = "18"
+  # Next.js telemetry disabled
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Redirect rules for Next.js App Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Cache control for static assets
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    # Long cache for images (1 year)
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    # Short cache for HTML pages (1 hour)
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    # No cache for API routes
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Environment variables (set in Netlify UI or CLI)
+# NEXT_PUBLIC_SUPABASE_URL - Supabase project URL
+# NEXT_PUBLIC_SUPABASE_ANON_KEY - Supabase anonymous key
+# STRIPE_SECRET_KEY - Stripe secret key (if using Stripe)
+
+# Plugin configuration
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
