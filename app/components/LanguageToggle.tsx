@@ -21,7 +21,7 @@ const languages: Language[] = [
 
 interface LanguageToggleProps {
   className?: string
-  variant?: 'dropdown' | 'buttons' | 'compact'
+  variant?: 'dropdown' | 'buttons' | 'compact' | 'full'
   showFlags?: boolean
   showNativeNames?: boolean
 }
@@ -76,6 +76,36 @@ export default function LanguageToggle({
             {showFlags && <span className="mr-1">{language.flag}</span>}
             {showNativeNames ? language.nativeName : language.code.toUpperCase()}
           </motion.button>
+        ))}
+      </div>
+    )
+  }
+
+  if (variant === 'full') {
+    return (
+      <div className={`grid grid-cols-2 gap-2 ${className}`}>
+        {languages.map((language) => (
+          <button
+            key={language.code}
+            onClick={() => handleLanguageChange(language.code)}
+            disabled={isPending}
+            className={`
+              flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200
+              ${language.code === locale 
+                ? 'bg-primary text-white' 
+                : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+              }
+              ${isPending ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+            `}
+          >
+            {showFlags && <span className="text-lg">{language.flag}</span>}
+            <span>{language.nativeName}</span>
+            {language.code === locale && (
+              <svg className="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            )}
+          </button>
         ))}
       </div>
     )

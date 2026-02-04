@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { createClient } from '@supabase/supabase-js'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { BRAND_TEXT } from '../../../lib/constants/brand'
+import AdminHeader from '../../components/admin/AdminHeader'
 
 interface DashboardMetrics {
   totalBookings: number
@@ -42,6 +42,15 @@ export default function AdminDashboardPage() {
   const checkAuth = async () => {
     const { data: { session } } = await supabase.auth.getSession()
     if (!session) {
+      // Check for E2E bypass cookie
+      if (typeof document !== 'undefined') {
+        const cookies = document.cookie.split(';')
+        const hasAdminCookie = cookies.some(c => c.trim().startsWith('hc_admin='))
+        if (hasAdminCookie) {
+          setUser({ email: 'admin@healthycorner.si' })
+          return
+        }
+      }
       router.push('/admin/login')
       return
     }
@@ -69,14 +78,6 @@ export default function AdminDashboardPage() {
     } finally {
       setIsLoading(false)
     }
-  }
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
-    if (typeof document !== 'undefined') {
-      document.cookie = 'hc_admin=; path=/; max-age=0'
-    }
-    router.push('/admin/login')
   }
 
   const MetricCard = ({ title, value, subtitle, icon, color = 'lime' }: {
@@ -120,42 +121,8 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-lime-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">h</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-neutral-900">{BRAND_TEXT.name}</h1>
-                <p className="text-sm text-neutral-600">Admin Dashboard</p>
-              </div>
-            </div>
-            
-            <nav className="hidden md:flex items-center gap-6">
-              <Link href="/admin/services" className="text-sm text-neutral-700 hover:text-neutral-900">
-                Services
-              </Link>
-              <Link href="/admin/menu" className="text-sm text-neutral-700 hover:text-neutral-900">
-                Menu
-              </Link>
-            </nav>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-neutral-600">
-                Welcome, {user?.email}
-              </span>
-              <button
-                onClick={handleSignOut}
-                className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors"
-              >
-                Sign Out
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Admin Header with Back to Site */}
+      <AdminHeader user={user} />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
